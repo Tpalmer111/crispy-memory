@@ -8,4 +8,4 @@ I have been working this morning on a concept that I believe will have a solid f
 
 MVP goals: A discussion forum for poker players to submit hands they have played and would and a comment section for advice/ananysis. 
 
-STRETCH goals:
+STRETCH goals: The real idea Ihave been trying to forulate, with minimal success, is a poker tournement orginization tool. This will require a form for setting up a tournament, with a countdown clock, a player tracker, and a blinds calculator. 
