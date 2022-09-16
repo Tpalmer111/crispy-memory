@@ -13,8 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.review.hasOne(models.user)
       models.review.hasOne(models.album)
-
-    }
+    }  
   }
   review.init({
     review: DataTypes.STRING,

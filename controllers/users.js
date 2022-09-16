@@ -133,45 +133,45 @@ router.get('/profile', (req, res) => {
     }
 })
 
-router.get('/search', (req, res) => {
-    res.render
-})
+// router.get('/search', (req, res) => {
+//     res.render('search.ejs')
+// })
 
-router.get('/comment', (req, res) => {
-    res.render('render a form for a user to add a comment to an album')
-})
+// router.get('/comment', (req, res) => {
+//     res.render('render a form for a user to add a comment to an album')
+// })
 
-router.get('/update', (req, res) => {
-    res.render('render a form to update user email and password')
-})
+// router.get('/update', (req, res) => {
+//     res.render('render a form to update user email and password')
+// })
 
-router.get('/albums/:id', (req, res) => {
-    res.render('show album information: title, artist, etc.')
-})
+// router.get('/albums/:id', (req, res) => {
+//     res.render('show album information: title, artist, etc.')
+// })
 
-router.get('/albums/:id/comment', (req, res) => {
-    res.render('show album comments')
-})
+// router.get('/albums/:id/comment', (req, res) => {
+//     res.render('show album comments')
+// })
 
-router.post('/albums', (req, res) => {
-    console.log('add this album to user profile')
-})
+// router.post('/albums', (req, res) => {
+//     console.log('add this album to user profile')
+// })
 
-router.post('/albums/:id/comment', (req, res) => {
-    console.log('add this comment to this album')
-})
+// router.post('/albums/:id/comment', (req, res) => {
+//     console.log('add this comment to this album')
+// })
 
-router.put('/users', (req, res) => {
-    console.log('update this user with this new email/password')
-})
+// router.put('/users', (req, res) => {
+//     console.log('update this user with this new email/password')
+// })
 
-router.put('/comments/:id', (req, res) => {
-    console.log('update this comment on this album')
-})
+// router.put('/comments/:id', (req, res) => {
+//     console.log('update this comment on this album')
+// })
 
-router.delete('/albums/:id', (req, res) => {
-    console.log('delete this album')
-})
+// router.delete('/albums/:id', (req, res) => {
+//     console.log('delete this album')
+// })
 
 
 module.exports = router
