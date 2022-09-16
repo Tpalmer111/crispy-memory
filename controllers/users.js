@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
+const axios = require('axios')
 
 // GET /users/new -- render a form to create a new user
 router.get('/new', (req, res) => {
@@ -43,6 +44,30 @@ router.post('/', async (req, res) => {
         res.send('server error')
     }
 })
+
+
+
+/**
+/2.0/?method=artist.getinfo&artist=Cher&api_key=YOUR_API_KEY&format=json
+ */
+
+
+ const fetchLastFm = async () => {
+    try {
+
+        const search = 'pink floyd'
+
+        const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${search}&api_key=${process.env.API_KEY}&format=json`)
+        console.log(response.data.results.albummatches)
+
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+fetchLastFm()
+
+
 
 //http://127.0.0.1:3000/users/login?message=Incorrect%20username%20or%20password
 // GET /users/login -- show a login form to the user
@@ -107,5 +132,46 @@ router.get('/profile', (req, res) => {
         })
     }
 })
+
+router.get('/search', (req, res) => {
+    res.render
+})
+
+router.get('/comment', (req, res) => {
+    res.render('render a form for a user to add a comment to an album')
+})
+
+router.get('/update', (req, res) => {
+    res.render('render a form to update user email and password')
+})
+
+router.get('/albums/:id', (req, res) => {
+    res.render('show album information: title, artist, etc.')
+})
+
+router.get('/albums/:id/comment', (req, res) => {
+    res.render('show album comments')
+})
+
+router.post('/albums', (req, res) => {
+    console.log('add this album to user profile')
+})
+
+router.post('/albums/:id/comment', (req, res) => {
+    console.log('add this comment to this album')
+})
+
+router.put('/users', (req, res) => {
+    console.log('update this user with this new email/password')
+})
+
+router.put('/comments/:id', (req, res) => {
+    console.log('update this comment on this album')
+})
+
+router.delete('/albums/:id', (req, res) => {
+    console.log('delete this album')
+})
+
 
 module.exports = router

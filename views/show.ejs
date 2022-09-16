@@ -1,0 +1,11 @@
+<% albums.forEach(album => { %>
+    <div>
+      <h3><%= album.title %></h3>
+      <p><%= album.title %></p>
+      <p><%= album.release %></p>
+      <a href="/details/<%= movie.imdbID %>">more info</a>
+    </div>
+    <% if (album.image != "N/A") { %>
+      <img  src="<%= album.image %>" alt="<%= albuym.title %>'s movie poster"/> 
+    <% } %>
+  <% }) %>

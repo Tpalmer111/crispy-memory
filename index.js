@@ -5,10 +5,14 @@ const ejsLayouts = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser')
 const db = require('./models')
 const crypto = require('crypto-js')
+const axios = require("axios")
 
-console.log('server secret:', process.env.ENC_SECRET)
+// http://swapi.dev/api/films/
+// http://www.last.fm/api/auth/?api_key=478b2e0e43876ad5b99485fdcabc05b1
+// console.log('server secret:', process.env.ENC_SECRET)
 
-// config express app/middlewares
+
+// config express app/middleware
 const app = express()
 const PORT = process.env.PORT || 3000
 app.set('view engine', 'ejs')
@@ -36,7 +40,6 @@ app.use(async (req, res, next) => {
 })
 
 
-
 // route definitions
 app.get('/', (req, res) => {
     // console.log('incoming cookie 🍪', req.cookies)
@@ -45,8 +48,13 @@ app.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
+
+
 // Controllers
 app.use('/users', require('./controllers/users'))
 
+
 // listen on a port
-app.listen(PORT, () => console.log(`you or your loved ones may be entitled to compensation on port: ${PORT}`))
+app.listen(PORT, () => console.log(`Jammin to your favorite records on port: ${PORT}`))
+
+
